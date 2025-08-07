@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arlene Drumond - Especialista em CPA Baixo para Clínicas</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            line-height: 1.6;
+            color: #2d3748;
+            background: #ffffff;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header Section */
+        .header {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .header-text h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff 0%, #4ecdc4 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-subtitle {
+            font-size: 1.4rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+
+        .unique-proposition {
+            background: rgba(78, 205, 196, 0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #4ecdc4;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .unique-proposition strong {
+            color: #4ecdc4;
+            font-size: 1.2rem;
+        }
+
+        .header-stats {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-item {
+            text-align: center;
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4ecdc4;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-top: 0.5rem;
+        }
+
+        .header-image {
+            text-align: center;
+            position: relative;
+        }
+
+        .profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .profile-image {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 6px solid #4ecdc4;
+            box-shadow: 0 20px 40px rgba(78, 205, 196, 0.3);
+        }
+
+        .floating-badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #4ecdc4;
+            color: #1a202c;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 16px rgba(78, 205, 196, 0.4);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Services Section */
+        .services {
+            padding: 6rem 0;
+            background: #f7fafc;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #4a5568;
+            margin-bottom: 4rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #4ecdc4;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #4ecdc4, #44b3ac);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #4ecdc4, #44b3ac);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 1.5rem;
+        }
+
+        .service-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: #1a202c;
+        }
+
+        .service-description {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        /* Setup Services Section */
+        .setup-services {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        /* Premium Video Section */
+        .video-services {
+            padding: 6rem 0;
+            background: #1a202c;
+            color: white;
+        }
+
+        /* Proof Section */
+        .proof-section {
+            padding: 6rem 0;
+            background: #f7fafc;
+        }
+
+        /* Case Studies */
+        .case-studies {
+            padding: 6rem 0;
+            background: white;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+
+        .case-card {
+            background: #f7fafc;
+            padding: 2.5rem;
+            border-radius: 16px;
+            border-left: 6px solid #4ecdc4;
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .case-client {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1a202c;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+
+        .case-client::before {
+            content: '✅';
+            margin-right: 0.5rem;
+        }
+
+        .case-objective {
+            margin-bottom: 1.5rem;
+        }
+
+        .case-objective strong {
+            color: #4a5568;
+        }
+
+        .case-results {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 12px;
+            border-left: 4px solid #4ecdc4;
+        }
+
+        .case-results strong {
+            color: #4ecdc4;
+        }
+
+        /* Packages Section */
+        .packages {
+            padding: 6rem 0;
+            background: #f7fafc;
+        }
+
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .package-card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .package-card.featured {
+            border-color: #4ecdc4;
+            transform: scale(1.05);
+            background: linear-gradient(135deg, #4ecdc4 0%, #44b3ac 100%);
+            color: white;
+        }
+
+        .package-card.featured .package-price {
+            color: white;
+        }
+
+        .package-card:hover:not(.featured) {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .package-badge {
+            position: absolute;
+            top: -12px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #4ecdc4;
+            color: white;
+            padding: 6px 20px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+        }
+
+        .package-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-align: center;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4ecdc4;
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .package-features li {
+            padding: 0.5rem 0;
+            position: relative;
+            padding-left: 1.5rem;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #4ecdc4;
+            font-weight: bold;
+        }
+
+        .package-card.featured .package-features li::before {
+            color: white;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 6rem 0;
+            background: #1a202c;
+            color: white;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.1);
+            padding: 1.5rem;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+        }
+
+        .contact-item strong {
+            color: #4ecdc4;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #4ecdc4 0%, #44b3ac 100%);
+            color: white;
+            padding: 16px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 20px rgba(78, 205, 196, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(78, 205, 196, 0.4);
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .header-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .services-grid,
+            .cases-grid,
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .results-hero h2 {
+                font-size: 2rem;
+            }
+            
+            .highlight-number {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <section class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-text">
+                    <h1>Arlene Drumond</h1>
+                    <p class="header-subtitle">Especialista em CPA Baixo para Clínicas Médico-Estéticas</p>
+                    
+                    <div class="unique-proposition">
+                        <strong>A única especialista que gera conversas a R$ 3,73</strong><br>
+                        enquanto o mercado paga R$ 25+ por conversa
+                    </div>
+
+                    <div class="header-stats">
+                        <div class="stat-item">
+                            <span class="stat-number">743</span>
+                            <span class="stat-label">Conversas Qualificadas</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">540%</span>
+                            <span class="stat-label">ROI Comprovado</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="header-image">
+                    <div class="profile-container">
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='280' height='280' viewBox='0 0 280 280'%3E%3Ccircle cx='140' cy='140' r='140' fill='%234ecdc4'/%3E%3Ctext x='140' y='150' text-anchor='middle' font-size='24' fill='white' font-family='Arial'%3EArlene Drumond%3C/text%3E%3C/svg%3E" alt="Arlene Drumond" class="profile-image">
+                        <div class="floating-badge">Expert CPA</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services">
+        <div class="container">
+            <h2 class="section-title">Serviços Especializados</h2>
+            <p class="section-subtitle">Soluções estratégicas focadas em resultados reais para clínicas médico-estéticas</p>
+            
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">🎯</div>
+                    <h3 class="service-title">Gestão de Tráfego CPA Baixo</h3>
+                    <p class="service-description">Meta Ads e Google Ads otimizados especificamente para clínicas, com foco em conversas qualificadas a baixo custo. Metodologia própria que entrega R$ 3,73 por conversa.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📊</div>
+                    <h3 class="service-title">Auditoria de Performance</h3>
+                    <p class="service-description">Análise completa das suas campanhas atuais, identificação de vazamentos de budget e otimizações que podem reduzir seu CPA em até 70%.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🚀</div>
+                    <h3 class="service-title">Consultoria Estratégica</h3>
+                    <p class="service-description">Reposicionamento digital, aumento de ticket médio, estratégias de upsell e consultoria completa para transformar sua clínica em referência regional.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">💡</div>
+                    <h3 class="service-title">Funis de Conversão</h3>
+                    <p class="service-description">Criação de landing pages de alta conversão, scripts de atendimento e automações que transformam leads em pacientes pagantes.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">📈</div>
+                    <h3 class="service-title">ROI Garantido</h3>
+                    <p class="service-description">Trabalho focado em resultados mensuráveis. Relatórios detalhados e acompanhamento constante para garantir o retorno do seu investimento.</p>
+                </div>
+                
+                <div class="service-card">
+                    <div class="service-icon">🎪</div>
+                    <h3 class="service-title">Remarketing Inteligente</h3>
+                    <p class="service-description">Estratégias avançadas de reengajamento para converter visitantes em agendamentos, aumentando significativamente sua taxa de conversão.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Setup Services Section -->
+    <section class="setup-services" style="padding: 6rem 0; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <div class="container">
+            <h2 class="section-title" style="color: white;">Serviços de Estruturação Digital</h2>
+            <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Investimentos estratégicos para construir a base da sua operação digital</p>
+            
+            <div class="services-grid" style="margin-top: 3rem;">
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(78, 205, 196, 0.2); color: #4ecdc4;">🚀</div>
+                    <h3 class="service-title" style="color: white;">Landing Pages de Alta Conversão</h3>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9); margin-top: 1rem;">
+                        <li style="padding: 0.4rem 0;">✓ Design responsivo profissional</li>
+                        <li style="padding: 0.4rem 0;">✓ Copywriting persuasivo otimizado</li>
+                        <li style="padding: 0.4rem 0;">✓ Formulários com alta taxa de conversão</li>
+                        <li style="padding: 0.4rem 0;">✓ Integração completa WhatsApp/CRM</li>
+                        <li style="padding: 0.4rem 0;">✓ SEO técnico otimizado</li>
+                        <li style="padding: 0.4rem 0;">✓ Múltiplas revisões até aprovação</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(78, 205, 196, 0.2); color: #4ecdc4;">🎯</div>
+                    <h3 class="service-title" style="color: white;">Google Meu Negócio Premium</h3>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9); margin-top: 1rem;">
+                        <li style="padding: 0.4rem 0;">✓ Otimização completa do perfil</li>
+                        <li style="padding: 0.4rem 0;">✓ Organização profissional de fotos</li>
+                        <li style="padding: 0.4rem 0;">✓ Descrição SEO local otimizada</li>
+                        <li style="padding: 0.4rem 0;">✓ Estratégia de posts automáticos</li>
+                        <li style="padding: 0.4rem 0;">✓ Sistema de gestão de avaliações</li>
+                        <li style="padding: 0.4rem 0;">✓ Monitoramento de concorrentes</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.2);">
+                    <div class="service-icon" style="background: rgba(78, 205, 196, 0.2); color: #4ecdc4;">⚙️</div>
+                    <h3 class="service-title" style="color: white;">Setup Campanhas CPA Baixo</h3>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9); margin-top: 1rem;">
+                        <li style="padding: 0.4rem 0;">✓ Configuração avançada Meta Ads</li>
+                        <li style="padding: 0.4rem 0;">✓ Configuração estratégica Google Ads</li>
+                        <li style="padding: 0.4rem 0;">✓ Pixel e eventos de conversão</li>
+                        <li style="padding: 0.4rem 0;">✓ Públicos personalizados premium</li>
+                        <li style="padding: 0.4rem 0;">✓ Estrutura de campanhas otimizada</li>
+                        <li style="padding: 0.4rem 0;">✓ Métricas e KPIs personalizados</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Video Section -->
+    <section class="video-services" style="padding: 6rem 0; background: #1a202c; color: white;">
+        <div class="container">
+            <div style="text-align: center; margin-bottom: 4rem;">
+                <h2 class="section-title" style="color: white;">Produção de Vídeos com IA Premium</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Criação profissional que converte mais por custar menos</p>
+                <div style="background: rgba(78, 205, 196, 0.1); padding: 1rem; border-radius: 12px; max-width: 500px; margin: 2rem auto; border: 1px solid #4ecdc4;">
+                    <strong style="color: #4ecdc4;">🚀 TECNOLOGIA EXCLUSIVA:</strong><br>
+                    <span style="opacity: 0.9;">Inteligência Artificial de última geração para resultados profissionais</span>
+                </div>
+            </div>
+            
+            <div class="services-grid" style="margin-top: 3rem;">
+                <div class="service-card" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                    <div class="service-icon" style="background: rgba(78, 205, 196, 0.2); color: #4ecdc4;">🎬</div>
+                    <h3 class="service-title" style="color: white;">Vídeos Institucionais</h3>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9); margin-top: 1rem;">
+                        <li style="padding: 0.3rem 0;">✓ Vídeos de 60-90 segundos</li>
+                        <li style="padding: 0.3rem 0;">✓ Roteiro profissional estratégico</li>
+                        <li style="padding: 0.3rem 0;">✓ Animações e transições premium</li>
+                        <li style="padding: 0.3rem 0;">✓ Trilha sonora licenciada</li>
+                        <li style="padding: 0.3rem 0;">✓ Revisões até aprovação final</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                    <div class="service-icon" style="background: rgba(78, 205, 196, 0.2); color: #4ecdc4;">📱</div>
+                    <h3 class="service-title" style="color: white;">Vídeos para Campanhas</h3>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9); margin-top: 1rem;">
+                        <li style="padding: 0.3rem 0;">✓ Vídeos de 15-30 segundos</li>
+                        <li style="padding: 0.3rem 0;">✓ Múltiplos formatos (Stories, Feed, Reels)</li>
+                        <li style="padding: 0.3rem 0;">✓ CTAs otimizados para conversão</li>
+                        <li style="padding: 0.3rem 0;">✓ Versões para teste A/B</li>
+                        <li style="padding: 0.3rem 0;">✓ Entrega em 48h úteis</li>
+                    </ul>
+                </div>
+                
+                <div class="service-card" style="background: rgba(255,255,255,0.05); backdrop-filter: blur(10px); border: 1px solid rgba(255,255,255,0.1);">
+                    <div class="service-icon" style="background: rgba(78, 205, 196, 0.2); color: #4ecdc4;">🎨</div>
+                    <h3 class="service-title" style="color: white;">Kits de Vídeos</h3>
+                    <ul style="list-style: none; padding: 0; color: rgba(255,255,255,0.9); margin-top: 1rem;">
+                        <li style="padding: 0.3rem 0;">✓ Múltiplos vídeos coordenados</li>
+                        <li style="padding: 0.3rem 0;">✓ Estratégia visual coerente</li>
+                        <li style="padding: 0.3rem 0;">✓ Ângulos e abordagens variadas</li>
+                        <li style="padding: 0.3rem 0;">✓ Cronograma de publicação</li>
+                        <li style="padding: 0.3rem 0;">✓ Descontos progressivos por volume</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div style="background: rgba(255,255,255,0.05); padding: 2rem; border-radius: 12px; margin-top: 3rem; border-left: 4px solid #4ecdc4;">
+                <h4 style="color: #4ecdc4; margin-bottom: 1rem;">⚡ PROCESSO OTIMIZADO:</h4>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem; color: rgba(255,255,255,0.9);">
+                    <div>✓ Briefing estratégico detalhado</div>
+                    <div>✓ Criação em até 48h úteis</div>
+                    <div>✓ Revisões ilimit
